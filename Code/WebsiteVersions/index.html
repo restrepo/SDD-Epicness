@@ -4,16 +4,18 @@
     <meta charset="utf-8"/>
     <title>EPIC ROBOT</title>
     <style>
-        body {background-color: lightgray}
-        h1 {color:black}
         /* color pallete */
         html {
+            --lgt-gray:  lightgray;
             --green: #76C2AF;
  	        --drk-green: #697D5A;
             --red: #D6457E;
             --lgt-fucsia: #EBBFC0;
             --black: #32383c;
         }
+        body {background-color: var(--lgt-gray)}
+        h1 {color:black}
+
         /* https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/ */        
         button {
 	        text-align: center;
@@ -57,7 +59,7 @@
 
  	    .button1:focus {
             background-color: var(--red);
-	         outline: none;
+	        outline: none;
 	    }
        
 	
@@ -91,7 +93,7 @@
         width: 600px;
         min-height: 150px;
         margin: 100px auto;
-        background: #f3f3f3;
+        background: var(--lgt-gray);
         position: relative;
         z-index: 103;
         padding: 15px 35px;
@@ -106,7 +108,7 @@
             font-family: sans-serif;
         }
         .cnt223 p a{
-        color: #d91900;
+        color: var(--red);
         font-weight: bold;
         }
         .cnt223 .x{
@@ -133,7 +135,7 @@
     If you're on a mobile device use the <b>buttons</b> to control the robot.
     <a href="https://meet.google.com/qim-vcbg-uqv" target="_blank">Click here to open the live video feed.</a>
 <br/><br/>
-<button style="color:white;background-color:#d91900;font-weight:bold;border:none;border-radius:10px;font-size:large" class="close" onclick="helloworld()">Close </button>
+<button style="color:white;background-color: var(--red);font-weight:bold;border:none;border-radius:10px;font-size:large" class="close" onclick="helloworld()">Close </button>
 </p>
 </div>
 </div>
@@ -246,7 +248,9 @@ function helloworld()
         }
     };
 </script>
-<script src="https://code.jquery.com/jquery-1.8.2.js"></script>
+
+<!--  BEGIN POP-UP WINDOW CODE   -->
+<script src="https://code.jquery.com/jquery-1.8.2.js"></script> 
 
 <script>
 $(function(){
@@ -267,5 +271,7 @@ return false;
 //});
 });
 </script>
+<!--  ENDPOP-UP WINDOW CODE   -->
+
 </body>
 </html>
