@@ -6,13 +6,12 @@
     <style>
         body {background-color: lightgray}
         h1 {color:black}
+        /* color pallete */
         html {
             --green: #76C2AF;
-	    --drk-green: #697D5A;
-            --blue: #147ec1;
-            --lgt-blue: #3db5eb;
+ 	        --drk-green: #697D5A;
+            --red: #D6457E;
             --lgt-fucsia: #EBBFC0;
-            --drk-blue: #1663a0;
             --black: #32383c;
       }
         /* https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/ */        
@@ -34,7 +33,7 @@
 	}
 
         button:active {
-  	    background-color: var(--drk-green);
+  	        background-color: var(--drk-green);
             border-radius: 30px;      
             color: var(--lgt-fucsia);
 	}
@@ -43,7 +42,7 @@
 	    outline: none;
 	}
 
-        .button1 {
+    .button1 {
             color: white;
             background-color:#76C2AF;
             border: none;
@@ -54,8 +53,13 @@
             height: 30px; 
             width: 30px; 
             font-size: medium;
-        }
-        
+    }
+
+ 	    .button1:focus {
+            background-color: var(--red);
+	         outline: none;
+	    }
+       
 	
         /* This part is the css for the start up popup. I don't understand it */
         #overlay {
