@@ -6,19 +6,46 @@
     <style>
         body {background-color: lightgray}
         h1 {color:black}
-        
+        html {
+            --green: #76C2AF;
+	    --drk-green: #697D5A;
+            --blue: #147ec1;
+            --lgt-blue: #3db5eb;
+            --lgt-fucsia: #EBBFC0;
+            --drk-blue: #1663a0;
+            --black: #32383c;
+      }
+        /* https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/ */        
         button {
-            background-color: Transparent;
-            background-repeat:no-repeat;
+	    text-align: center;
+            color: white;
+            background-color: var(--green) ;
+            border-radius: 38px;
             border: none;
-            cursor:pointer;
             overflow: hidden;
-            /* outline:none; */
+            font-size: 350%;
+            font-weight: bold;
+	    cursor: pointer;
+            /*padding: -10px 0;*/
         }
+
+        button:hover {
+       	    border: 2px solid var(--drk-green);
+	}
+
+        button:active {
+  	    background-color: var(--drk-green);
+            border-radius: 30px;      
+            color: var(--lgt-fucsia);
+	}
+
+	button:focus {
+	    outline: none;
+	}
+
         .button1 {
             color: white;
             background-color:#76C2AF;
-            background-repeat:no-repeat;
             border: none;
             cursor:pointer;
             border-radius: 30px;
@@ -29,6 +56,7 @@
             font-size: medium;
         }
         
+	
         /* This part is the css for the start up popup. I don't understand it */
         #overlay {
         position: fixed;
@@ -101,7 +129,7 @@
     If you're on a mobile device use the <b>buttons</b> to control the robot.
     <a href="https://meet.google.com/qim-vcbg-uqv" target="_blank">Click here to open the live video feed.</a>
 <br/><br/>
-<a style="color:black" href='' class='close'>Close </a>
+<button style="color:white;background-color:#d91900;font-weight:bold;border:none;border-radius:10px;font-size:large" class="close" onclick="helloworld()">Close </button>
 </p>
 </div>
 </div>
@@ -109,15 +137,15 @@
     <br>
     <h1> EPIC ROBOT </h1>
 <br><br>
-<button style="height: 75px; width: 75px" onclick="forward()"><img style="height: 65px" src="images/arrowu.png" alt="up"></button>
+<button style="height: 75px; width: 75px; transform: rotate(270deg)" onclick="forward()">➡</button>
 <br><br>
-<button style="height: 75px; width: 75px" onclick="left()"><img style="height: 65px" src="images/arrowl.png" alt="←"></button>
+<button style="height: 75px; width: 75px; transform: rotate(180deg)" onclick="left()">➡</button>
 <span style="display:inline-block; width: 10px;"></span>
-<button style="height: 75px; width: 75px" onclick="stop()"><img style="height: 63px" src="images/stop.png" alt="stop"></button>
+<button style="height: 75px; width: 75px; font-size: 150%" onclick="stop()">STOP</button>
 <span style="display:inline-block; width: 10px;"></span>
-<button style="height: 75px; width: 75px" onclick="right()"><img style="height: 65px" src="images/arrowr.png" alt="→"></button>
+<button style="height: 75px; width: 75px" onclick="right()">➡</button>
 <br><br>
-<button style="height: 75px; width: 75px" onclick="reverse()"><img style="height: 65px" src="images/arrowd.png" alt="↓"></button>
+<button style="height: 75px; width: 75px; transform: rotate(90deg)" onclick="reverse()">➡</button>
 <br><br><br>
 <p>Speed Control</p>
 <button class="button1" onclick="speed1()">1</button>
@@ -186,7 +214,11 @@ function nospeed()
 	xmlhttp.open("GET","cgi-bin/speed4.cgi",true);
 	xmlhttp.send();
 }
-
+function helloworld()
+{
+	xmlhttp.open("GET","cgi-bin/helloworld.py",true);
+	xmlhttp.send();
+}
 </script>
 <script>
 
